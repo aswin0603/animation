@@ -38,204 +38,186 @@ Registeration Number : 212224110007
 
 ### activity_main.xml
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="219dp"
-        android:layout_height="263dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"
-        app:srcCompat="@drawable/anim" />
-
-    <Button
-        android:id="@+id/BTNrotate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:backgroundTint="#987371"
-        android:text="Rotate"
-        app:layout_constraintBottom_toTopOf="@+id/BTNslide"
-        app:layout_constraintEnd_toStartOf="@+id/BTNfade"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.743" />
-
-    <Button
-        android:id="@+id/BTNblink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#987371"
-        android:text="Blink"
-        app:layout_constraintBottom_toTopOf="@+id/BTNmove"
-        app:layout_constraintEnd_toStartOf="@+id/BTNrotate"
-        app:layout_constraintHorizontal_bias="0.479"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.779" />
-
-    <Button
-        android:id="@+id/BTNfade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:backgroundTint="#987371"
-        android:text="Fade"
-        app:layout_constraintBottom_toTopOf="@+id/BTNzoom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.743" />
-
-    <Button
-        android:id="@+id/BTNslide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#987371"
-        android:text="Slide"
-        app:layout_constraintBottom_toTopOf="@+id/BTNstop"
-        app:layout_constraintEnd_toStartOf="@+id/BTNzoom" />
-
-    <Button
-        android:id="@+id/BTNmove"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#987371"
-        android:text="Move"
-        app:layout_constraintBottom_toTopOf="@+id/BTNstop"
-        app:layout_constraintEnd_toStartOf="@+id/BTNslide"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/BTNzoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#987371"
-        android:text="Zoom"
-        app:layout_constraintBottom_toTopOf="@+id/BTNstop"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/BTNstop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="#987371"
-        android:text="Stop Animation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Experiment 06"
+        android:text="@string/expsix"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:translationX="50dp"
+        android:translationY="100dp" />
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img"
+        android:translationY="130dp" />
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:scaleX="0.9"
+        android:translationY="130dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/blink"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="@string/blink"
+            android:textColor="@color/white"
+            tools:ignore="VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/rotate"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="@string/clockwise"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/fade"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="@string/fade"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:scaleX="0.9"
+        android:translationY="130dp"
+        android:weightSum="3">
+
+
+        <Button
+            android:id="@+id/move"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="@string/move"
+            android:textColor="@color/white"
+            tools:ignore="VisualLintButtonSize" />
+
+
+        <Button
+            android:id="@+id/slide"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="@string/slide"
+            android:textColor="@color/white" />
+
+
+        <Button
+            android:id="@+id/zoom"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="@string/zoom"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:scaleX="0.9"
+        android:text="@string/stop_animation"
+        android:translationY="130dp" />
+</LinearLayout>
 ```
 
 ### MainActivity.java
 ```java
 package com.example.expsix;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView imageView;
-    Button blinkBTN, rotateBTN, fadeBTN, moveBTN, slideBTN, zoomBTN, stopBTN;
+
+    private ImageView imageView;
+    private Button blink, rotate, fade, move, slide, zoom, stop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imageView = findViewById(R.id.imageView);
-        blinkBTN = findViewById(R.id.BTNblink);
-        rotateBTN = findViewById(R.id.BTNrotate);
-        fadeBTN = findViewById(R.id.BTNfade);
-        moveBTN = findViewById(R.id.BTNmove);
-        slideBTN = findViewById(R.id.BTNslide);
-        zoomBTN = findViewById(R.id.BTNzoom);
-        stopBTN = findViewById(R.id.BTNstop);
+        imageView = findViewById(R.id.imageview);
+        blink = findViewById(R.id.blink);
+        rotate = findViewById(R.id.rotate);
+        fade = findViewById(R.id.fade);
+        move = findViewById(R.id.move);
+        slide = findViewById(R.id.slide);
+        zoom = findViewById(R.id.zoom);
+        stop = findViewById(R.id.stop);
 
-        blinkBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
-                imageView.startAnimation(animation);
-            }
-        });
+        createAnimation(blink, R.anim.blink);
+        createAnimation(rotate, R.anim.rotate);
+        createAnimation(fade, R.anim.fade);
+        createAnimation(move, R.anim.move);
+        createAnimation(slide, R.anim.slide);
+        createAnimation(zoom, R.anim.zoom);
 
-        rotateBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
-                imageView.startAnimation(animation);
-            }
-        });
+        stop.setOnClickListener(v -> imageView.clearAnimation());
+    }
 
-        fadeBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade);
-                imageView.startAnimation(animation);
-            }
-        });
-
-        moveBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
-                imageView.startAnimation(animation);
-            }
-        });
-
-        slideBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide);
-                imageView.startAnimation(animation);
-            }
-        });
-
-        zoomBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
-                imageView.startAnimation(animation);
-            }
-        });
-
-        stopBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                imageView.clearAnimation();
-            }
+    private void createAnimation(View view, int animResId) {
+        view.setOnClickListener(v -> {
+            Animation animation = AnimationUtils.loadAnimation(MainActivity.this, animResId);
+            imageView.startAnimation(animation);
         });
     }
 }
@@ -244,9 +226,12 @@ public class MainActivity extends AppCompatActivity {
 ### slide.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <scale android:duration="500"
-        android:fromXScale="1.0" android:fromYScale="1.0"
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true" >
+    <scale
+        android:duration="500"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
         android:interpolator="@android:anim/linear_interpolator"
         android:toXScale="1.0"
         android:toYScale="0.0" />
@@ -255,40 +240,47 @@ public class MainActivity extends AppCompatActivity {
 ### zoom.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <scale xmlns:android="http://schemas.android.com/apk/res/android"
-        android:fromXScale="0.5" android:toXScale="3.0"
-        android:fromYScale="0.5" android:toYScale="3.0"
-        android:duration="1000" android:pivotX="25%"
-        android:pivotY="25%" >
-    </scale>
-    <scale xmlns:android="http://schemas.android.com/apk/res/android"
-        android:startOffset="1000" android:fromXScale="3.0"
-        android:toXScale="0.5" android:fromYScale="3.0"
-        android:toYScale="0.5" android:duration="1000"
-        android:pivotX="25%" android:pivotY="25%" >
-    </scale>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true" >
+
+    <scale
+        android:interpolator="@android:anim/linear_interpolator"
+        android:duration = "1000"
+        android:fromXScale = "1"
+        android:fromYScale = "1"
+        android:pivotX = "50%"
+        android:pivotY = "50%"
+        android:toXScale = "2"
+        android:toYScale = "2"/>
 </set>
 ```
 ### fade.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator">
+
     <alpha
         android:duration="1000"
         android:fromAlpha="0"
         android:toAlpha="1" />
+
     <alpha
         android:duration="1000"
         android:fromAlpha="1"
         android:startOffset="2000"
         android:toAlpha="0" />
+
 </set>
 ```
 ### move.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:fillAfter="true">
+
     <translate
         android:fromXDelta="0%p"
         android:toXDelta="75%p"
@@ -298,13 +290,15 @@ public class MainActivity extends AppCompatActivity {
 ### rotate.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <rotate
         android:duration="6000"
         android:fromDegrees="0"
         android:pivotX="50%"
         android:pivotY="50%"
         android:toDegrees="360" />
+
     <rotate
         android:duration="6000"
         android:fromDegrees="360"
@@ -312,15 +306,18 @@ public class MainActivity extends AppCompatActivity {
         android:pivotY="50%"
         android:startOffset="5000"
         android:toDegrees="0" />
+
 </set>
 ```
 ### blink.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
-    <alpha android:fromAlpha="0.0" android:toAlpha="1.0"
+    <alpha android:fromAlpha="0.0"
+        android:toAlpha="1.0"
         android:interpolator="@android:anim/accelerate_interpolator"
-        android:duration="500" android:repeatMode="reverse"
+        android:duration="500"
+        android:repeatMode="reverse"
         android:repeatCount="infinite"/>
 </set>
 ```
@@ -330,7 +327,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-https://github.com/user-attachments/assets/92e6f39b-7c75-4063-9c18-841e3ca7ec52
+
+
+https://github.com/user-attachments/assets/fa154ed8-0685-4253-99ac-8a54c1c46df5
+
+
 
 
 
